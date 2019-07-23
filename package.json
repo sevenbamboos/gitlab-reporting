@@ -1,0 +1,19 @@
+{
+  "name": "gitlab-reporting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "elasticsearch": "docker run -d -p 9200:9200 -p 9300:9300 -e \"discovery.type=single-node\" docker.elastic.co/elasticsearch/elasticsearch:7.2.0",
+    "test-elasticsearch": "node test/elasticsearch-client.spec.js",
+    "test-rabbitmq": "node test/rabbitmq-client.spec.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.2.0",
+    "amqplib": "^0.5.3"
+  }
+}
